@@ -4,23 +4,90 @@
              x:Class="DocumentProcessingSample.Views.WordSamplesPage"
              Title="Word Samples">
     <ScrollView>
-        <VerticalStackLayout Spacing="20" Padding="30" VerticalOptions="Center">
-            <Frame BackgroundColor="#F0F4F8" CornerRadius="12" Padding="24" HasShadow="True" BorderColor="#D0D7DE">
-                <VerticalStackLayout Spacing="16" HorizontalOptions="Center">
-                    <Label Text="📄 Syncfusion DocIO"
-                           FontSize="24"
+        <VerticalStackLayout Spacing="20" Padding="20">
+            <!-- Header Section -->
+            <Frame BackgroundColor="#4822E3" CornerRadius="10" Padding="15" HasShadow="True">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="Syncfusion .NET DocIO Library"
+                           FontSize="20"
                            FontAttributes="Bold"
-                           TextColor="#2B579A"
+                           TextColor="White"
                            HorizontalOptions="Center" />
-                    <Label Text="Syncfusion DocIO is a high-performance .NET Word library to create, read, and edit Word documents (DOCX, WordML, HTML, RTF, TXT, and Word 97-2003)."
-                           FontSize="14"
-                           TextColor="#555555"
-                           HorizontalTextAlignment="Center" />
-                    <Label Text="Features showcase: Mail Merge, Convert Word to PDF/Image, Create Tables &amp; Charts, Find and Replace, Form Fields, and more."
-                           FontSize="13"
-                           TextColor="#777777"
+                    <Label Text="High-performance, non-UI .NET library to create, read, and edit Word documents (DOCX, WordML, HTML, RTF, TXT)."
+                           FontSize="12"
+                           TextColor="#E0D7FF"
+                           HorizontalOptions="Center"
                            HorizontalTextAlignment="Center" />
                 </VerticalStackLayout>
+            </Frame>
+
+            <Label Text="Select a feature below to execute and generate a Word document:"
+                   FontSize="14"
+                   FontAttributes="Bold"
+                   TextColor="{AppThemeBinding Light=#333333, Dark=#CCCCCC}"
+                   Margin="0,5,0,0" />
+
+            <!-- 1. DOCX to PDF Conversion -->
+            <Frame BorderColor="#D0D7DE" CornerRadius="8" Padding="15" HasShadow="True" BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#1E1E1E}">
+                <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto" ColumnSpacing="10" RowSpacing="6">
+                    <Label Grid.Row="0" Grid.Column="0" Text="1. DOCX to PDF Conversion" FontSize="16" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#1F2328, Dark=#F0F6FC}" />
+                    <Label Grid.Row="1" Grid.Column="0" Text="Converts a DOCX document to PDF format while preserving all formatting, fonts, images, and layout." FontSize="12" TextColor="#656D76" />
+                    <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Text="Convert" Clicked="OnWordToPdfClicked" BackgroundColor="#4822E3" TextColor="White" VerticalOptions="Center" CornerRadius="6" Padding="16,8" />
+                </Grid>
+            </Frame>
+
+            <!-- 2. Clone and Merge -->
+            <Frame BorderColor="#D0D7DE" CornerRadius="8" Padding="15" HasShadow="True" BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#1E1E1E}">
+                <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto" ColumnSpacing="10" RowSpacing="6">
+                    <Label Grid.Row="0" Grid.Column="0" Text="2. Clone and Merge" FontSize="16" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#1F2328, Dark=#F0F6FC}" />
+                    <Label Grid.Row="1" Grid.Column="0" Text="Imports content from a source document into a destination document while preserving the destination document's styles and formatting." FontSize="12" TextColor="#656D76" />
+                    <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Text="Merge" Clicked="OnCloneAndMergeClicked" BackgroundColor="#4822E3" TextColor="White" VerticalOptions="Center" CornerRadius="6" Padding="16,8" />
+                </Grid>
+            </Frame>
+
+            <!-- 3. Execute Mail Merge -->
+            <Frame BorderColor="#D0D7DE" CornerRadius="8" Padding="15" HasShadow="True" BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#1E1E1E}">
+                <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto" ColumnSpacing="10" RowSpacing="6">
+                    <Label Grid.Row="0" Grid.Column="0" Text="3. Execute Mail Merge" FontSize="16" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#1F2328, Dark=#F0F6FC}" />
+                    <Label Grid.Row="1" Grid.Column="0" Text="Executes mail merge with fields «Emp_Id», «Name», «Phone», and «City» to generate personalized employee documents from a template." FontSize="12" TextColor="#656D76" />
+                    <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Text="Merge" Clicked="OnMailMergeClicked" BackgroundColor="#4822E3" TextColor="White" VerticalOptions="Center" CornerRadius="6" Padding="16,8" />
+                </Grid>
+            </Frame>
+
+            <!-- 4. DOCX to DOCX -->
+            <Frame BorderColor="#D0D7DE" CornerRadius="8" Padding="15" HasShadow="True" BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#1E1E1E}">
+                <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto" ColumnSpacing="10" RowSpacing="6">
+                    <Label Grid.Row="0" Grid.Column="0" Text="4. DOCX to DOCX" FontSize="16" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#1F2328, Dark=#F0F6FC}" />
+                    <Label Grid.Row="1" Grid.Column="0" Text="Reads an existing DOCX document and creates a new document with the same content, including text formatting, paragraphs, and styles." FontSize="12" TextColor="#656D76" />
+                    <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Text="Convert" Clicked="OnDocxToDocxClicked" BackgroundColor="#4822E3" TextColor="White" VerticalOptions="Center" CornerRadius="6" Padding="16,8" />
+                </Grid>
+            </Frame>
+
+            <!-- 5. DOCX to HTML -->
+            <Frame BorderColor="#D0D7DE" CornerRadius="8" Padding="15" HasShadow="True" BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#1E1E1E}">
+                <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto" ColumnSpacing="10" RowSpacing="6">
+                    <Label Grid.Row="0" Grid.Column="0" Text="5. DOCX to HTML" FontSize="16" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#1F2328, Dark=#F0F6FC}" />
+                    <Label Grid.Row="1" Grid.Column="0" Text="Converts a DOCX document to HTML format while preserving document structure, formatting, tables, and images." FontSize="12" TextColor="#656D76" />
+                    <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Text="Convert" Clicked="OnHtmlToDocxClicked" BackgroundColor="#4822E3" TextColor="White" VerticalOptions="Center" CornerRadius="6" Padding="16,8" />
+                </Grid>
+            </Frame>
+
+            <!-- 6. DOCX to Markdown -->
+            <Frame BorderColor="#D0D7DE" CornerRadius="8" Padding="15" HasShadow="True" BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#1E1E1E}">
+                <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto" ColumnSpacing="10" RowSpacing="6">
+                    <Label Grid.Row="0" Grid.Column="0" Text="6. DOCX to Markdown" FontSize="16" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#1F2328, Dark=#F0F6FC}" />
+                    <Label Grid.Row="1" Grid.Column="0" Text="Converts a DOCX document to Markdown format while preserving document structure, headings, lists, and formatting." FontSize="12" TextColor="#656D76" />
+                    <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Text="Convert" Clicked="OnDocxToMarkdownClicked" BackgroundColor="#4822E3" TextColor="White" VerticalOptions="Center" CornerRadius="6" Padding="16,8" />
+                </Grid>
+            </Frame>
+
+            <!-- 7. Retrieve Bookmark Content -->
+            <Frame BorderColor="#D0D7DE" CornerRadius="8" Padding="15" HasShadow="True" BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#1E1E1E}">
+                <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto" ColumnSpacing="10" RowSpacing="6">
+                    <Label Grid.Row="0" Grid.Column="0" Text="7. Retrieve Bookmark Content" FontSize="16" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#1F2328, Dark=#F0F6FC}" />
+                    <Label Grid.Row="1" Grid.Column="0" Text="Retrieves the text content from a specific bookmark named 'Norwind' within a Word document and exports it to a new document." FontSize="12" TextColor="#656D76" />
+                    <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Text="Retrieve" Clicked="OnRetrieveBookmarkClicked" BackgroundColor="#4822E3" TextColor="White" VerticalOptions="Center" CornerRadius="6" Padding="16,8" />
+                </Grid>
             </Frame>
         </VerticalStackLayout>
     </ScrollView>
