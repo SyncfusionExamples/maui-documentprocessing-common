@@ -4,23 +4,72 @@
              x:Class="DocumentProcessingSample.Views.ExcelSamplesPage"
              Title="Excel Samples">
     <ScrollView>
-        <VerticalStackLayout Spacing="20" Padding="30" VerticalOptions="Center">
-            <Frame BackgroundColor="#F0F4F8" CornerRadius="12" Padding="24" HasShadow="True" BorderColor="#D0D7DE">
-                <VerticalStackLayout Spacing="16" HorizontalOptions="Center">
-                    <Label Text="📊 Syncfusion XlsIO"
-                           FontSize="24"
+        <VerticalStackLayout Spacing="20" Padding="20">
+            <!-- Header Section -->
+            <Frame BackgroundColor="#217346" CornerRadius="10" Padding="15" HasShadow="True">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="Syncfusion .NET Excel Library"
+                           FontSize="20"
                            FontAttributes="Bold"
-                           TextColor="#217346"
+                           TextColor="White"
                            HorizontalOptions="Center" />
-                    <Label Text="Syncfusion XlsIO is a fast .NET Excel library to create, read, and manipulate Excel documents (XLSX, XLS, CSV, and TSV) without Microsoft Office."
-                           FontSize="14"
-                           TextColor="#555555"
-                           HorizontalTextAlignment="Center" />
-                    <Label Text="Features showcase: Formulas, Pivot Tables, Charts, Conditional Formatting, Data Validation, Excel to PDF/Image conversion, and more."
-                           FontSize="13"
-                           TextColor="#777777"
+                    <Label Text="High-performance .NET Excel library to create, read, and edit Excel documents."
+                           FontSize="12"
+                           TextColor="#D0F5E8"
+                           HorizontalOptions="Center"
                            HorizontalTextAlignment="Center" />
                 </VerticalStackLayout>
+            </Frame>
+
+            <Label Text="Select a feature below to execute and generate an Excel file:"
+                   FontSize="14"
+                   FontAttributes="Bold"
+                   TextColor="{AppThemeBinding Light=#333333, Dark=#CCCCCC}"
+                   Margin="0,5,0,0" />
+
+            <!-- 1. Create Invoice -->
+            <Frame BorderColor="#D0D7DE" CornerRadius="8" Padding="15" HasShadow="True" BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#1E1E1E}">
+                <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto" ColumnSpacing="10" RowSpacing="6">
+                    <Label Grid.Row="0" Grid.Column="0" Text="1. Create Invoice" FontSize="16" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#1F2328, Dark=#F0F6FC}" />
+                    <Label Grid.Row="1" Grid.Column="0" Text="Generates a professional Excel invoice with formulas, formatting, and company branding." FontSize="12" TextColor="#656D76" />
+                    <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Text="Generate" Clicked="OnCreateInvoiceClicked" BackgroundColor="#217346" TextColor="White" VerticalOptions="Center" CornerRadius="6" Padding="16,8" />
+                </Grid>
+            </Frame>
+
+            <!-- 2. Import Data from DataTable -->
+            <Frame BorderColor="#D0D7DE" CornerRadius="8" Padding="15" HasShadow="True" BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#1E1E1E}">
+                <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto" ColumnSpacing="10" RowSpacing="6">
+                    <Label Grid.Row="0" Grid.Column="0" Text="2. Import Data from DataTable" FontSize="16" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#1F2328, Dark=#F0F6FC}" />
+                    <Label Grid.Row="1" Grid.Column="0" Text="Imports data from a .NET DataTable into an Excel worksheet with formatting." FontSize="12" TextColor="#656D76" />
+                    <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Text="Import" Clicked="OnImportDataTableClicked" BackgroundColor="#217346" TextColor="White" VerticalOptions="Center" CornerRadius="6" Padding="16,8" />
+                </Grid>
+            </Frame>
+
+            <!-- 3. Excel to PDF -->
+            <Frame BorderColor="#D0D7DE" CornerRadius="8" Padding="15" HasShadow="True" BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#1E1E1E}">
+                <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto" ColumnSpacing="10" RowSpacing="6">
+                    <Label Grid.Row="0" Grid.Column="0" Text="3. Excel to PDF" FontSize="16" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#1F2328, Dark=#F0F6FC}" />
+                    <Label Grid.Row="1" Grid.Column="0" Text="Converts an Excel workbook to a PDF document, preserving layout and styles." FontSize="12" TextColor="#656D76" />
+                    <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Text="Convert" Clicked="OnExcelToPdfClicked" BackgroundColor="#217346" TextColor="White" VerticalOptions="Center" CornerRadius="6" Padding="16,8" />
+                </Grid>
+            </Frame>
+
+            <!-- 4. Excel to Image -->
+            <Frame BorderColor="#D0D7DE" CornerRadius="8" Padding="15" HasShadow="True" BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#1E1E1E}">
+                <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto" ColumnSpacing="10" RowSpacing="6">
+                    <Label Grid.Row="0" Grid.Column="0" Text="4. Excel to Image" FontSize="16" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#1F2328, Dark=#F0F6FC}" />
+                    <Label Grid.Row="1" Grid.Column="0" Text="Exports an Excel worksheet or range as a high-quality image (PNG/JPEG)." FontSize="12" TextColor="#656D76" />
+                    <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Text="Export" Clicked="OnExcelToImageClicked" BackgroundColor="#217346" TextColor="White" VerticalOptions="Center" CornerRadius="6" Padding="16,8" />
+                </Grid>
+            </Frame>
+
+            <!-- 5. Encryption -->
+            <Frame BorderColor="#D0D7DE" CornerRadius="8" Padding="15" HasShadow="True" BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#1E1E1E}">
+                <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto" ColumnSpacing="10" RowSpacing="6">
+                    <Label Grid.Row="0" Grid.Column="0" Text="5. Encryption" FontSize="16" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#1F2328, Dark=#F0F6FC}" />
+                    <Label Grid.Row="1" Grid.Column="0" Text="Encrypts an Excel file with a password to restrict unauthorized access." FontSize="12" TextColor="#656D76" />
+                    <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Text="Encrypt" Clicked="OnEncryptionClicked" BackgroundColor="#217346" TextColor="White" VerticalOptions="Center" CornerRadius="6" Padding="16,8" />
+                </Grid>
             </Frame>
         </VerticalStackLayout>
     </ScrollView>
