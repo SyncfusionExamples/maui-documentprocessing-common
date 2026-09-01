@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DocumentProcessingSample.Views.PdfSamplesPage"
+             Title="PDF Samples">
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="20">
+            <!-- Header Section -->
+            <Frame BackgroundColor="#4822E3" CornerRadius="10" Padding="15" HasShadow="True">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="Syncfusion .NET PDF Library"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           HorizontalOptions="Center" />
+                    <Label Text="High-performance, non-UI .NET PDF library to create, read, and edit PDF documents."
+                           FontSize="12"
+                           TextColor="#E0D7FF"
+                           HorizontalOptions="Center"
+                           HorizontalTextAlignment="Center" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Label Text="Select a feature below to execute and generate a PDF:"
+                   FontSize="14"
+                   FontAttributes="Bold"
+                   TextColor="{AppThemeBinding Light=#333333, Dark=#CCCCCC}"
+                   Margin="0,5,0,0" />
+
+            <!-- 1. Create PDF Invoice -->
+            <Frame BorderColor="#D0D7DE" CornerRadius="8" Padding="15" HasShadow="True" BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#1E1E1E}">
+                <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto" ColumnSpacing="10" RowSpacing="6">
+                    <Label Grid.Row="0" Grid.Column="0" Text="1. Create PDF Invoice" FontSize="16" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#1F2328, Dark=#F0F6FC}" />
+                    <Label Grid.Row="1" Grid.Column="0" Text="Generates a complex PDF invoice with grid table, product pricing, custom header styling, totals, and company logo." FontSize="12" TextColor="#656D76" />
+                    <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Text="Generate" Clicked="OnCreateInvoiceClicked" BackgroundColor="#4822E3" TextColor="White" VerticalOptions="Center" CornerRadius="6" Padding="16,8" />
+                </Grid>
+            </Frame>
+
+            <!-- 2. Digital Signature -->
+            <Frame BorderColor="#D0D7DE" CornerRadius="8" Padding="15" HasShadow="True" BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#1E1E1E}">
+                <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto" ColumnSpacing="10" RowSpacing="6">
+                    <Label Grid.Row="0" Grid.Column="0" Text="2. Digital Signature" FontSize="16" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#1F2328, Dark=#F0F6FC}" />
+                    <Label Grid.Row="1" Grid.Column="0" Text="Signs an existing PDF document with a PFX digital certificate (.pfx), cryptographic hash (SHA512), and visual signature appearance." FontSize="12" TextColor="#656D76" />
+                    <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Text="Sign PDF" Clicked="OnDigitalSignatureClicked" BackgroundColor="#4822E3" TextColor="White" VerticalOptions="Center" CornerRadius="6" Padding="16,8" />
+                </Grid>
+            </Frame>
+
+            <!-- 3. Encryption -->
+            <Frame BorderColor="#D0D7DE" CornerRadius="8" Padding="15" HasShadow="True" BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#1E1E1E}">
+                <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto" ColumnSpacing="10" RowSpacing="6">
+                    <Label Grid.Row="0" Grid.Column="0" Text="3. Encryption" FontSize="16" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#1F2328, Dark=#F0F6FC}" />
+                    <Label Grid.Row="1" Grid.Column="0" Text="Encrypts a PDF statement using 256-bit AES encryption with User Password ('password@123') and Owner Password ('syncfusion')." FontSize="12" TextColor="#656D76" />
+                    <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Text="Encrypt" Clicked="OnEncryptionClicked" BackgroundColor="#4822E3" TextColor="White" VerticalOptions="Center" CornerRadius="6" Padding="16,8" />
+                </Grid>
+            </Frame>
+
+            <!-- 4. Image to PDF -->
+            <Frame BorderColor="#D0D7DE" CornerRadius="8" Padding="15" HasShadow="True" BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#1E1E1E}">
+                <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto" ColumnSpacing="10" RowSpacing="6">
+                    <Label Grid.Row="0" Grid.Column="0" Text="4. Image to PDF" FontSize="16" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#1F2328, Dark=#F0F6FC}" />
+                    <Label Grid.Row="1" Grid.Column="0" Text="Converts multiple raster images (JPEG/PNG) into a multi-page PDF document while maintaining page aspect ratios." FontSize="12" TextColor="#656D76" />
+                    <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Text="Convert" Clicked="OnImageToPdfClicked" BackgroundColor="#4822E3" TextColor="White" VerticalOptions="Center" CornerRadius="6" Padding="16,8" />
+                </Grid>
+            </Frame>
+
+            <!-- 5. Watermark -->
+            <Frame BorderColor="#D0D7DE" CornerRadius="8" Padding="15" HasShadow="True" BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#1E1E1E}">
+                <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto" ColumnSpacing="10" RowSpacing="6">
+                    <Label Grid.Row="0" Grid.Column="0" Text="5. Watermark" FontSize="16" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#1F2328, Dark=#F0F6FC}" />
+                    <Label Grid.Row="1" Grid.Column="0" Text="Adds a diagonal 'Confidential' watermark annotation with custom opacity and rotation angle to an existing PDF." FontSize="12" TextColor="#656D76" />
+                    <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Text="Add Watermark" Clicked="OnWatermarkClicked" BackgroundColor="#4822E3" TextColor="White" VerticalOptions="Center" CornerRadius="6" Padding="16,8" />
+                </Grid>
+            </Frame>
+
+            <!-- 6. Redaction -->
+            <Frame BorderColor="#D0D7DE" CornerRadius="8" Padding="15" HasShadow="True" BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#1E1E1E}">
+                <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto" ColumnSpacing="10" RowSpacing="6">
+                    <Label Grid.Row="0" Grid.Column="0" Text="6. Redaction" FontSize="16" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#1F2328, Dark=#F0F6FC}" />
+                    <Label Grid.Row="1" Grid.Column="0" Text="Permanently blacks out sensitive text and image areas from a PDF document to protect confidential data." FontSize="12" TextColor="#656D76" />
+                    <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Text="Redact PDF" Clicked="OnRedactionClicked" BackgroundColor="#4822E3" TextColor="White" VerticalOptions="Center" CornerRadius="6" Padding="16,8" />
+                </Grid>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

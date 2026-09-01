@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DocumentProcessingSample.Views.ExcelSamplesPage"
+             Title="Excel Samples">
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="30" VerticalOptions="Center">
+            <Frame BackgroundColor="#F0F4F8" CornerRadius="12" Padding="24" HasShadow="True" BorderColor="#D0D7DE">
+                <VerticalStackLayout Spacing="16" HorizontalOptions="Center">
+                    <Label Text="📊 Syncfusion XlsIO"
+                           FontSize="24"
+                           FontAttributes="Bold"
+                           TextColor="#217346"
+                           HorizontalOptions="Center" />
+                    <Label Text="Syncfusion XlsIO is a fast .NET Excel library to create, read, and manipulate Excel documents (XLSX, XLS, CSV, and TSV) without Microsoft Office."
+                           FontSize="14"
+                           TextColor="#555555"
+                           HorizontalTextAlignment="Center" />
+                    <Label Text="Features showcase: Formulas, Pivot Tables, Charts, Conditional Formatting, Data Validation, Excel to PDF/Image conversion, and more."
+                           FontSize="13"
+                           TextColor="#777777"
+                           HorizontalTextAlignment="Center" />
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

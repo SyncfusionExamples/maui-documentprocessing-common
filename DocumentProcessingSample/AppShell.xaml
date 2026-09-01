@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="DocumentProcessingSample.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:DocumentProcessingSample.Views"
+    Title="DocumentProcessingSample"
+    FlyoutBehavior="Flyout">
+
+    <!-- Flyout Header -->
+    <Shell.FlyoutHeader>
+        <Grid BackgroundColor="#4822E3" HeightRequest="130" Padding="20">
+            <VerticalStackLayout VerticalOptions="Center" Spacing="4">
+                <Label Text="Syncfusion" FontSize="14" TextColor="#D0C4FC" FontAttributes="Bold" />
+                <Label Text="Document Processing" FontSize="20" TextColor="White" FontAttributes="Bold" />
+                <Label Text=".NET MAUI Samples" FontSize="12" TextColor="#E0D7FF" />
+            </VerticalStackLayout>
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <!-- PDF Samples (Default) -->
+    <FlyoutItem Title="PDF Samples" Icon="dotnet_bot.png">
+        <Tab Title="PDF Samples">
+            <ShellContent
+                Title="PDF Samples"
+                ContentTemplate="{DataTemplate views:PdfSamplesPage}"
+                Route="PdfSamplesPage" />
+        </Tab>
+    </FlyoutItem>
+
+    <!-- Word Samples -->
+    <FlyoutItem Title="Word Samples" Icon="dotnet_bot.png">
+        <Tab Title="Word Samples">
+            <ShellContent
+                Title="Word Samples"
+                ContentTemplate="{DataTemplate views:WordSamplesPage}"
+                Route="WordSamplesPage" />
+        </Tab>
+    </FlyoutItem>
+
+    <!-- Excel Samples -->
+    <FlyoutItem Title="Excel Samples" Icon="dotnet_bot.png">
+        <Tab Title="Excel Samples">
+            <ShellContent
+                Title="Excel Samples"
+                ContentTemplate="{DataTemplate views:ExcelSamplesPage}"
+                Route="ExcelSamplesPage" />
+        </Tab>
+    </FlyoutItem>
+
+    <!-- PowerPoint Samples -->
+    <FlyoutItem Title="PowerPoint Samples" Icon="dotnet_bot.png">
+        <Tab Title="PowerPoint Samples">
+            <ShellContent
+                Title="PowerPoint Samples"
+                ContentTemplate="{DataTemplate views:PowerPointSamplesPage}"
+                Route="PowerPointSamplesPage" />
+        </Tab>
+    </FlyoutItem>
+
+    <!-- PDF Viewer Samples -->
+    <FlyoutItem Title="PDF Viewer Samples" Icon="dotnet_bot.png">
+        <Tab Title="PDF Viewer Samples">
+            <ShellContent
+                Title="PDF Viewer Samples"
+                ContentTemplate="{DataTemplate views:PdfViewerSamplesPage}"
+                Route="PdfViewerSamplesPage" />
+        </Tab>
+    </FlyoutItem>
+
+</Shell>

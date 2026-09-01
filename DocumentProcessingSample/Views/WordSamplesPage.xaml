@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DocumentProcessingSample.Views.WordSamplesPage"
+             Title="Word Samples">
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="30" VerticalOptions="Center">
+            <Frame BackgroundColor="#F0F4F8" CornerRadius="12" Padding="24" HasShadow="True" BorderColor="#D0D7DE">
+                <VerticalStackLayout Spacing="16" HorizontalOptions="Center">
+                    <Label Text="📄 Syncfusion DocIO"
+                           FontSize="24"
+                           FontAttributes="Bold"
+                           TextColor="#2B579A"
+                           HorizontalOptions="Center" />
+                    <Label Text="Syncfusion DocIO is a high-performance .NET Word library to create, read, and edit Word documents (DOCX, WordML, HTML, RTF, TXT, and Word 97-2003)."
+                           FontSize="14"
+                           TextColor="#555555"
+                           HorizontalTextAlignment="Center" />
+                    <Label Text="Features showcase: Mail Merge, Convert Word to PDF/Image, Create Tables &amp; Charts, Find and Replace, Form Fields, and more."
+                           FontSize="13"
+                           TextColor="#777777"
+                           HorizontalTextAlignment="Center" />
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="DocumentProcessingSample.csproj">
+    <Deploy Solution="Debug|*" />
+  </Project>
+</Solution>
