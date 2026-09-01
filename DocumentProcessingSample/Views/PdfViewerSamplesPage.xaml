@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.PdfViewer;assembly=Syncfusion.Maui.PdfViewer"
+             xmlns:local="clr-namespace:DocumentProcessingSample.Views"
              x:Class="DocumentProcessingSample.Views.PdfViewerSamplesPage"
              Title="PDF Viewer Samples">
-    <ScrollView>
-        <VerticalStackLayout Spacing="20" Padding="30" VerticalOptions="Center">
-            <Frame BackgroundColor="#F0F4F8" CornerRadius="12" Padding="24" HasShadow="True" BorderColor="#D0D7DE">
-                <VerticalStackLayout Spacing="16" HorizontalOptions="Center">
-                    <Label Text="🔍 Syncfusion MAUI PDF Viewer"
-                           FontSize="24"
-                           FontAttributes="Bold"
-                           TextColor="#B30B00"
-                           HorizontalOptions="Center" />
-                    <Label Text="Syncfusion .NET MAUI PDF Viewer is a feature-rich control to view, review, and print PDF files seamlessly in cross-platform MAUI applications."
-                           FontSize="14"
-                           TextColor="#555555"
-                           HorizontalTextAlignment="Center" />
-                    <Label Text="Features showcase: Text Search, Text Selection, Zooming &amp; Scrolling, Annotations (Highlight, Underline, Strikethrough, Ink, Shape, Stamp), Form Filling, Digital Signatures, and Bookmarks."
-                           FontSize="13"
-                           TextColor="#777777"
-                           HorizontalTextAlignment="Center" />
-                </VerticalStackLayout>
-            </Frame>
-        </VerticalStackLayout>
-    </ScrollView>
+    <Grid RowDefinitions="*">
+        
+        <syncfusion:SfPdfViewer x:Name="PdfViewer" />
+        
+        <!-- File Picker Popup -->
+        <Frame x:Name="FilePickerFrame"
+               IsVisible="False"
+               CornerRadius="02"
+               HasShadow="True"
+               BorderColor="#D2D2D2"
+               BackgroundColor="#eee8f4"
+               Margin="{OnPlatform WinUI='04,52,04,52', MacCatalyst='04,52,04,52'}"
+               Padding="0"
+               VerticalOptions="{OnPlatform WinUI=Start, MacCatalyst=Start, Android=Fill, iOS=Fill}"
+               HorizontalOptions="{OnPlatform WinUI=Start, MacCatalyst=Start, Android=Fill, iOS=Fill}"
+               WidthRequest="{OnPlatform WinUI=250, MacCatalyst=250}"
+               HeightRequest="{OnPlatform WinUI=380, MacCatalyst=380}">
+            <local:PdfViewerFilePickerView x:Name="FilePickerView"/>
+        </Frame>
+    </Grid>
 </ContentPage>
