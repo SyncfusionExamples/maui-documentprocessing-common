@@ -46,6 +46,7 @@ public partial class PdfViewerSamplesPage : ContentPage, INotifyPropertyChanged
             BackgroundColor = Colors.Transparent,
             BorderColor = Colors.Transparent,
             Padding = 10,
+            CornerRadius=5,
             Margin = new Thickness(5, 0, 0, 0),
             TextColor = Colors.Black
         };
@@ -61,6 +62,7 @@ public partial class PdfViewerSamplesPage : ContentPage, INotifyPropertyChanged
             BackgroundColor = Colors.Transparent,
             BorderColor = Colors.Transparent,
             Padding = 10,
+            CornerRadius = 5,
             Margin = new Thickness(5, 0, 0, 0),
             TextColor = Colors.Black
         };

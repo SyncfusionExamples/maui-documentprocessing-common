@@ -73,7 +73,6 @@
 	  <None Remove="Pdf\Annotations.pdf" />
 	  <None Remove="Pdf\form_document.pdf" />
 	  <None Remove="Pdf\Invoice.pdf" />
-	  <None Remove="Pdf\password_protected_document.pdf" />
 	  <None Remove="Pdf\PDF_Succinctly1.pdf" />
 	  <None Remove="Pdf\rotated_document.pdf" />
 	</ItemGroup>
@@ -82,7 +81,6 @@
 	  <EmbeddedResource Include="Pdf\Annotations.pdf" />
 	  <EmbeddedResource Include="Pdf\form_document.pdf" />
 	  <EmbeddedResource Include="Pdf\Invoice.pdf" />
-	  <EmbeddedResource Include="Pdf\password_protected_document.pdf" />
 	  <EmbeddedResource Include="Pdf\PDF_Succinctly1.pdf" />
 	  <EmbeddedResource Include="Pdf\rotated_document.pdf" />
 	</ItemGroup>

@@ -16,12 +16,12 @@
                HasShadow="True"
                BorderColor="#D2D2D2"
                BackgroundColor="#eee8f4"
-               Margin="{OnPlatform WinUI='04,52,04,52', MacCatalyst='04,52,04,52'}"
+               Margin="{OnPlatform WinUI='04,50,04,50', MacCatalyst='04,50,04,50'}"
                Padding="0"
                VerticalOptions="{OnPlatform WinUI=Start, MacCatalyst=Start, Android=Fill, iOS=Fill}"
                HorizontalOptions="{OnPlatform WinUI=Start, MacCatalyst=Start, Android=Fill, iOS=Fill}"
                WidthRequest="{OnPlatform WinUI=250, MacCatalyst=250}"
-               HeightRequest="{OnPlatform WinUI=380, MacCatalyst=380}">
+               HeightRequest="{OnPlatform WinUI=310, MacCatalyst=310}">
             <local:PdfViewerFilePickerView x:Name="FilePickerView"/>
         </Frame>
     </Grid>
