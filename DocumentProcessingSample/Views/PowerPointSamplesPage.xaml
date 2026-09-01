@@ -4,23 +4,54 @@
              x:Class="DocumentProcessingSample.Views.PowerPointSamplesPage"
              Title="PowerPoint Samples">
     <ScrollView>
-        <VerticalStackLayout Spacing="20" Padding="30" VerticalOptions="Center">
-            <Frame BackgroundColor="#F0F4F8" CornerRadius="12" Padding="24" HasShadow="True" BorderColor="#D0D7DE">
-                <VerticalStackLayout Spacing="16" HorizontalOptions="Center">
-                    <Label Text="📑 Syncfusion Presentation"
-                           FontSize="24"
+        <VerticalStackLayout Spacing="20" Padding="20">
+            <!-- Header Section -->
+            <Frame BackgroundColor="#4822E3" CornerRadius="10" Padding="15" HasShadow="True">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="Syncfusion .NET Presentation Library"
+                           FontSize="20"
                            FontAttributes="Bold"
-                           TextColor="#D24726"
+                           TextColor="White"
                            HorizontalOptions="Center" />
-                    <Label Text="Syncfusion Essential Presentation is a .NET PowerPoint library to create, read, and edit PowerPoint presentations (PPTX) with rich graphics."
-                           FontSize="14"
-                           TextColor="#555555"
-                           HorizontalTextAlignment="Center" />
-                    <Label Text="Features showcase: Slide Transitions, Animations, SmartArt, Charts, Shapes, Tables, and PowerPoint to PDF/Image conversion."
-                           FontSize="13"
-                           TextColor="#777777"
+                    <Label Text="High-performance .NET library to create, read, edit, and convert PowerPoint presentations (PPTX)."
+                           FontSize="12"
+                           TextColor="#E0D7FF"
+                           HorizontalOptions="Center"
                            HorizontalTextAlignment="Center" />
                 </VerticalStackLayout>
+            </Frame>
+
+            <Label Text="Select a feature below to execute and generate PowerPoint files:"
+                   FontSize="14"
+                   FontAttributes="Bold"
+                   TextColor="{AppThemeBinding Light=#333333, Dark=#CCCCCC}"
+                   Margin="0,5,0,0" />
+
+            <!-- 1. PowerPoint to PDF -->
+            <Frame BorderColor="#D0D7DE" CornerRadius="8" Padding="15" HasShadow="True" BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#1E1E1E}">
+                <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto" ColumnSpacing="10" RowSpacing="6">
+                    <Label Grid.Row="0" Grid.Column="0" Text="1. PowerPoint to PDF" FontSize="16" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#1F2328, Dark=#F0F6FC}" />
+                    <Label Grid.Row="1" Grid.Column="0" Text="Converts a PowerPoint presentation (PPTX) to a PDF document, preserving formatting, fonts, images, and layout." FontSize="12" TextColor="#656D76" />
+                    <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Text="Convert" Clicked="OnPowerPointToPdfClicked" BackgroundColor="#4822E3" TextColor="White" VerticalOptions="Center" CornerRadius="6" Padding="16,8" />
+                </Grid>
+            </Frame>
+
+            <!-- 2. Clone and Merge -->
+            <Frame BorderColor="#D0D7DE" CornerRadius="8" Padding="15" HasShadow="True" BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#1E1E1E}">
+                <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto" ColumnSpacing="10" RowSpacing="6">
+                    <Label Grid.Row="0" Grid.Column="0" Text="2. Clone and Merge" FontSize="16" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#1F2328, Dark=#F0F6FC}" />
+                    <Label Grid.Row="1" Grid.Column="0" Text="Clones slides from one PowerPoint presentation into another presentation, enabling slide merging and reorganization." FontSize="12" TextColor="#656D76" />
+                    <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Text="Merge" Clicked="OnCloneAndMergeClicked" BackgroundColor="#4822E3" TextColor="White" VerticalOptions="Center" CornerRadius="6" Padding="16,8" />
+                </Grid>
+            </Frame>
+
+            <!-- 3. Find and Replace -->
+            <Frame BorderColor="#D0D7DE" CornerRadius="8" Padding="15" HasShadow="True" BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#1E1E1E}">
+                <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto" ColumnSpacing="10" RowSpacing="6">
+                    <Label Grid.Row="0" Grid.Column="0" Text="3. Find and Replace" FontSize="16" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#1F2328, Dark=#F0F6FC}" />
+                    <Label Grid.Row="1" Grid.Column="0" Text="Finds and replaces text content throughout the PowerPoint presentation, updating all occurrences across slides." FontSize="12" TextColor="#656D76" />
+                    <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Text="Replace" Clicked="OnFindAndReplaceClicked" BackgroundColor="#4822E3" TextColor="White" VerticalOptions="Center" CornerRadius="6" Padding="16,8" />
+                </Grid>
             </Frame>
         </VerticalStackLayout>
     </ScrollView>
