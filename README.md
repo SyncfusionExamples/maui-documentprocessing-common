@@ -4,9 +4,9 @@ This repository showcases interactive cross-platform examples using the **Syncfu
 
 ---
 
-## 🚀 Key Modules & Features Included
+## Key Modules & Features Included
 
-### 1. 📄 PDF Library
+### 1. PDF Library
 High-performance, non-UI .NET PDF library to create, read, and edit PDF documents without Adobe Acrobat dependencies.
 * **Create PDF Invoice**: Generate complex PDF invoices with tables, headers/footers, logos, and custom styling.
 * **Digital Signature**: Cryptographically sign PDFs using certificates (.pfx) with SHA-512 hashing and visual appearance.
@@ -15,7 +15,7 @@ High-performance, non-UI .NET PDF library to create, read, and edit PDF document
 * **Watermark**: Stamp documents with customizable diagonal text watermarks.
 * **Redaction**: Permanently black out sensitive text and graphic content.
 
-### 2. 📝 Word Library (DocIO)
+### 2. Word Library (DocIO)
 Standalone .NET Word library to create, read, and manipulate Word documents (DOCX, WordML, HTML, RTF, TXT).
 * **Word to PDF Conversion**: Convert DOCX documents directly to high-fidelity PDF files.
 * **Clone and Merge**: Import and combine content across multiple Word documents while preserving styles.
@@ -25,7 +25,7 @@ Standalone .NET Word library to create, read, and manipulate Word documents (DOC
 * **DOCX to Markdown**: Convert Word documents into clean Markdown files.
 * **Retrieve Bookmark Content**: Extract text and elements within specific document bookmarks.
 
-### 3. 📊 Excel Library (XlsIO)
+### 3. Excel Library (XlsIO)
 High-performance .NET Excel library to create, read, and manipulate Excel spreadsheets without Microsoft Office.
 * **Create Invoice**: Build professional spreadsheet invoices with formulas, cell formatting, and styles.
 * **Import Data from DataTable**: Populate worksheets dynamically from .NET DataTables.
@@ -33,18 +33,18 @@ High-performance .NET Excel library to create, read, and manipulate Excel spread
 * **Excel to Image**: Export worksheets or specific ranges to high-quality images (PNG/JPEG).
 * **Encryption**: Protect sensitive financial worksheets with password encryption.
 
-### 4. 🖥️ PowerPoint Library (Presentation)
+### 4. PowerPoint Library (Presentation)
 High-performance .NET library to create, read, edit, and convert PowerPoint presentations (PPTX).
 * **PowerPoint to PDF**: Convert PPTX presentations to PDF preserving formatting, layouts, and fonts.
 * **Clone and Merge**: Extract, reorder, and merge slides across different presentations.
 * **Find and Replace**: Perform batch search-and-replace for text across all slides.
 
-### 5. 🔍 .NET MAUI PDF Viewer
+### 5. .NET MAUI PDF Viewer
 A powerful, feature-rich UI control to view, navigate, and interact with PDF documents seamlessly on mobile and desktop platforms with built-in page virtualization and customizable toolbars.
 
 ---
 
-## 📚 Documentation & Reference Links
+## Documentation & Reference Links
 
 * **PDF**: [About Syncfusion .NET PDF Library | Syncfusion](https://help.syncfusion.com/document-processing/pdf/pdf-library/net/overview)
 * **Word**: [About Syncfusion Word Document Processing Solutions | Syncfusion](https://help.syncfusion.com/document-processing/word/overview)
@@ -54,7 +54,7 @@ A powerful, feature-rich UI control to view, navigate, and interact with PDF doc
 
 ---
 
-## 💻 Prerequisites & Requirements
+## Prerequisites & Requirements
 
 * [.NET 10 SDK](https://dotnet.microsoft.com/download) or higher
 * [Visual Studio](https://visualstudio.microsoft.com/) / [Code Studio](https://www.syncfusion.com/) with .NET MAUI workload installed
@@ -66,7 +66,7 @@ A powerful, feature-rich UI control to view, navigate, and interact with PDF doc
 
 ---
 
-## 🛠️ How to Run the Sample
+## How to Run the Sample
 
 1. Clone or download this repository.
 2. Open the solution `DocumentProcessingSample.slnx` or project `DocumentProcessingSample.csproj`.
