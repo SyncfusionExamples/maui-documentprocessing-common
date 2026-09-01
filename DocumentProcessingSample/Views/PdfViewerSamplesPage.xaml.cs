@@ -1,7 +1,7 @@
+using DocumentProcessingSample.Services;
 using Microsoft.Maui.Controls;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using DocumentProcessingSample.Services;
 
 namespace DocumentProcessingSample.Views;
 
@@ -14,7 +14,13 @@ public partial class PdfViewerSamplesPage : ContentPage, INotifyPropertyChanged
     {
         InitializeComponent();
         LoadPdf("PDF_Succinctly1");
+        PdfViewer.Tapped += PdfViewer_Tapped;
         AddFileOperationsToolbarItems();
+    }
+
+    private void PdfViewer_Tapped(object? sender, Syncfusion.Maui.PdfViewer.GestureEventArgs? e)
+    {
+        FilePickerFrame.IsVisible = false;
     }
 
     private void LoadPdf(string fileName)
@@ -27,6 +33,7 @@ public partial class PdfViewerSamplesPage : ContentPage, INotifyPropertyChanged
     {
         // Setup FilePickerView event handlers
         FilePickerView.FileSelected += FilePickerView_FileSelected;
+        FilePickerView.FileSelectedFromBrowse += FilePickerView_FileSelectedFromBrowse;
         FilePickerView.CloseRequested += FilePickerView_CloseRequested;
 
         fileOpenButton = new Button
@@ -68,6 +75,13 @@ public partial class PdfViewerSamplesPage : ContentPage, INotifyPropertyChanged
         PdfViewer?.Toolbars?.GetByName("PrimaryToolbar")?.Items?.Insert(0, new Syncfusion.Maui.PdfViewer.ToolbarItem(fileOpenButton, "FileOpenButton"));
         PdfViewer?.Toolbars?.GetByName("PrimaryToolbar")?.Items?.Insert(1, new Syncfusion.Maui.PdfViewer.ToolbarItem(fileSaveButton, "FileSaveButton"));
 #endif
+    }
+
+    private void FilePickerView_FileSelectedFromBrowse(object? sender, PdfFileData e)
+    {
+        currentFileName = e.FileName;
+        PdfViewer.LoadDocument(e.Stream);
+        FilePickerFrame.IsVisible = false;
     }
 
     private void PdfViewer_DocumentLoaded(object? sender, EventArgs? e)

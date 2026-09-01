@@ -6,6 +6,7 @@ public partial class PdfViewerFilePickerView : ContentView
 {
     private List<string> pdfFiles = new();
     public event EventHandler<string>? FileSelected;
+    public event EventHandler<PdfFileData>? FileSelectedFromBrowse;
     public event EventHandler? CloseRequested;
 
     public PdfViewerFilePickerView()
@@ -20,11 +21,11 @@ public partial class PdfViewerFilePickerView : ContentView
         
         // Add PDF files from the DocumentProcessingSample resources
         pdfFiles.Add("PDF_Succinctly");
-        pdfFiles.Add("Rotated_document.pdf");
-        pdfFiles.Add("Password_protected_document.pdf");
-        pdfFiles.Add("Single_page_document.pdf");
-        pdfFiles.Add("Annotations_document.pdf");
-        pdfFiles.Add("form_document.pdf");
+        pdfFiles.Add("Rotated_document");
+        pdfFiles.Add("Password_protected_document");
+        pdfFiles.Add("Single_page_document");
+        pdfFiles.Add("Annotations_document");
+        pdfFiles.Add("form_document");
         pdfFiles.Add("Browse files on this device");
 
         FileListView.ItemsSource = pdfFiles;
@@ -71,7 +72,7 @@ public partial class PdfViewerFilePickerView : ContentView
         PdfFileData? fileData = await FileService.OpenFile("pdf");
         if (fileData != null)
         {
-            FileSelected?.Invoke(this, fileData.FileName);
+            FileSelectedFromBrowse?.Invoke(this, fileData);
         }
     }
 
