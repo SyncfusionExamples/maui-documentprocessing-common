@@ -6,6 +6,7 @@ public partial class PdfViewerFilePickerView : ContentView
 {
     private List<string> pdfFiles = new();
     public event EventHandler<string>? FileSelected;
+    public event EventHandler<PdfFileData>? FileSelectedFromBrowse;
     public event EventHandler? CloseRequested;
 
     public PdfViewerFilePickerView()
@@ -20,11 +21,10 @@ public partial class PdfViewerFilePickerView : ContentView
         
         // Add PDF files from the DocumentProcessingSample resources
         pdfFiles.Add("PDF_Succinctly");
-        pdfFiles.Add("Rotated_document.pdf");
-        pdfFiles.Add("Password_protected_document.pdf");
-        pdfFiles.Add("Single_page_document.pdf");
-        pdfFiles.Add("Annotations_document.pdf");
-        pdfFiles.Add("form_document.pdf");
+        pdfFiles.Add("Rotated_document");
+        pdfFiles.Add("Single_page_document");
+        pdfFiles.Add("Annotations_document");
+        pdfFiles.Add("form_document");
         pdfFiles.Add("Browse files on this device");
 
         FileListView.ItemsSource = pdfFiles;
@@ -42,14 +42,12 @@ public partial class PdfViewerFilePickerView : ContentView
             else if (tappedIndex == 1)
                 fileName = "rotated_document.pdf";
             else if (tappedIndex == 2)
-                fileName = "password_protected_document.pdf";
-            else if (tappedIndex == 3)
                 fileName = "Invoice.pdf";
-            else if (tappedIndex == 4)
+            else if (tappedIndex == 3)
                 fileName = "Annotations.pdf";
-            else if (tappedIndex == 5)
+            else if (tappedIndex == 4)
                 fileName = "form_document.pdf";
-            else if (tappedIndex == 6)
+            else if (tappedIndex == 5)
             {
                 // Browse device
                 BrowseDevice_Clicked(null, EventArgs.Empty);
@@ -71,7 +69,7 @@ public partial class PdfViewerFilePickerView : ContentView
         PdfFileData? fileData = await FileService.OpenFile("pdf");
         if (fileData != null)
         {
-            FileSelected?.Invoke(this, fileData.FileName);
+            FileSelectedFromBrowse?.Invoke(this, fileData);
         }
     }
 

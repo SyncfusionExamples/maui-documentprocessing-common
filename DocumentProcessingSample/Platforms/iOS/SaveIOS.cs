@@ -1,33 +1,12 @@
 using QuickLook;
 using System;
 using System.IO;
-using System.Threading.Tasks;
 using UIKit;
 
 namespace DocumentProcessingSample.Services
 {
     public partial class SaveService
     {
-        public static async Task<string?> PlatformSaveAsAsync(string fileName, Stream fileStream)
-        {
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            string filePath = Path.Combine(path, fileName);
-            try
-            {
-                FileStream fsWrite = File.Open(filePath, FileMode.Create);
-                fileStream.Position = 0;
-                fileStream.CopyTo(fsWrite);
-                fsWrite.Flush();
-                fsWrite.Close();
-                return filePath;
-            }
-            catch (Exception ex)
-            {
-                await Application.Current!.MainPage!.DisplayAlert("Error", $"Failed to save file: {ex.Message}", "OK");
-                return null;
-            }
-        }
-
         public partial void SaveAndView(string filename, string contentType, MemoryStream stream)
         {
             string exception = string.Empty;

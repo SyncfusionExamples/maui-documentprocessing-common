@@ -73,42 +73,18 @@
 
 	<ItemGroup>
 	  <None Remove="Pdf\Annotations.pdf" />
-	  <None Remove="Pdf\Annotations1.pdf" />
-	  <None Remove="Pdf\corrupted_document.pdf" />
-	  <None Remove="Pdf\credit_card_statement.pdf" />
-	  <None Remove="Pdf\eSign_filling.pdf" />
 	  <None Remove="Pdf\form_document.pdf" />
-	  <None Remove="Pdf\handwritten-signature.pdf" />
-	  <None Remove="Pdf\InvisibleDigitalSignature.pdf" />
 	  <None Remove="Pdf\Invoice.pdf" />
-	  <None Remove="Pdf\password_protected_document.pdf" />
-	  <None Remove="Pdf\PDF_Succinctly.pdf" />
 	  <None Remove="Pdf\PDF_Succinctly1.pdf" />
-	  <None Remove="Pdf\pdf_viewer_stress_test.pdf" />
-	  <None Remove="Pdf\restrictedDocument.pdf" />
 	  <None Remove="Pdf\rotated_document.pdf" />
-	  <None Remove="Pdf\rtl_document.pdf" />
-	  <None Remove="Pdf\smart-form.pdf" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <EmbeddedResource Include="Pdf\Annotations.pdf" />
-	  <EmbeddedResource Include="Pdf\Annotations1.pdf" />
-	  <EmbeddedResource Include="Pdf\corrupted_document.pdf" />
-	  <EmbeddedResource Include="Pdf\credit_card_statement.pdf" />
-	  <EmbeddedResource Include="Pdf\eSign_filling.pdf" />
 	  <EmbeddedResource Include="Pdf\form_document.pdf" />
-	  <EmbeddedResource Include="Pdf\handwritten-signature.pdf" />
-	  <EmbeddedResource Include="Pdf\InvisibleDigitalSignature.pdf" />
 	  <EmbeddedResource Include="Pdf\Invoice.pdf" />
-	  <EmbeddedResource Include="Pdf\password_protected_document.pdf" />
-	  <EmbeddedResource Include="Pdf\PDF_Succinctly.pdf" />
 	  <EmbeddedResource Include="Pdf\PDF_Succinctly1.pdf" />
-	  <EmbeddedResource Include="Pdf\pdf_viewer_stress_test.pdf" />
-	  <EmbeddedResource Include="Pdf\restrictedDocument.pdf" />
 	  <EmbeddedResource Include="Pdf\rotated_document.pdf" />
-	  <EmbeddedResource Include="Pdf\rtl_document.pdf" />
-	  <EmbeddedResource Include="Pdf\smart-form.pdf" />
 	</ItemGroup>
 
 	<ItemGroup>
