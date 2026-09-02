@@ -121,13 +121,15 @@ namespace DocumentProcessingSample.Views
                 IPresentation presentation = Presentation.Open(presentationStream);
 
                 ITextSelection[] textSelections = presentation.FindAll(findText, false, false);
-                foreach (ITextSelection textSelection in textSelections)
+                if (textSelections != null)
                 {
-                    // Gets the found text as a single text part and replaces it.
-                    ITextPart textPart = textSelection.GetAsOneTextPart();
-                    textPart.Text = replaceText;
+                    foreach (ITextSelection textSelection in textSelections)
+                    {
+                        // Gets the found text as a single text part and replaces it.
+                        ITextPart textPart = textSelection.GetAsOneTextPart();
+                        textPart.Text = replaceText;
+                    }
                 }
-
                 using MemoryStream stream = new();
                 presentation.Save(stream);
                 presentation.Close();
